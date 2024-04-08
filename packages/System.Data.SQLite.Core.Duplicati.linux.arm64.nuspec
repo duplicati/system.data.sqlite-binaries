@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>System.Data.SQLite.Core.Duplicati.linux.arm64</id>
+    <version>1.0.116.0</version>
+    <authors>kenkendk</authors>
+    <owners>kenkendk</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This package contains the binaries required for using System.Data.SQLite.Core on Linux Arm64 platforms.</description>
+    <tags>Duplicati</tags>
+
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/duplicati/system.data.sqlite-binaries</projectUrl>
+    <readme>docs\README.md</readme>
+    <repository type="git" url="https://github.com/duplicati/system.data.sqlite-binaries" />
+  </metadata>
+  <files>
+  	<file src="../bin/linux-arm64/SQLite.Interop.dll" target="runtimes/linux-arm64/native" />
+    <file src="./README.linux.arm64.md" target="docs/README.md" />
+  </files>        
+</package>
