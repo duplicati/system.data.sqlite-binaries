@@ -2,12 +2,13 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>System.Data.SQLite.Core.Duplicati.macos.arm64</id>
-    <version>1.0.116.0</version>
+    <version>1.0.116.1</version>
     <authors>kenkendk</authors>
     <owners>kenkendk</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>This package contains the binaries required for using System.Data.SQLite.Core on MacOS M1/M2/M3 platforms.</description>
     <tags>Duplicati</tags>
+    <releaseNotes>Disabled SQLIte logging due to crash</releaseNotes>
 
     <license type="expression">MIT</license>
     <projectUrl>https://github.com/duplicati/system.data.sqlite-binaries</projectUrl>

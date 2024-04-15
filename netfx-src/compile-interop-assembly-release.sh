@@ -23,6 +23,9 @@ fi
 if [[ "$OSTYPE" == "darwin"* ]]; then
   libname=libSQLite.Interop.dylib
   osname=macos
+  if [[ "$archname" == "arm64" ]]; then
+    extradefs="$extradefs -DSQLITE_DISABLE_LOG=1"
+  fi
 else
   libname=libSQLite.Interop.so
   osname=linux
