@@ -1,0 +1,19 @@
+#!/bin/bash
+
+scriptdir=`dirname "$BASH_SOURCE"`
+extradefs="$@"
+archname=$ARCHNAME
+gccflags="-DHAVE_ACOSH -DHAVE_ASINH -DHAVE_ATANH -DHAVE_ISBLANK"
+
+libname=libSQLite.Interop.so
+osname=win
+archname=arm64
+
+echo "Building $libname for $osname-$archname"
+
+pushd "$scriptdir/SQLite.Interop/generic"
+clang --target=aarch64-w64-mingw32 -g -fPIC -shared $gccflags -I/clangarm64/include -o $libname interop.c -I../core -DSQLITE_THREADSAFE=1 -DSQLITE_USE_URI=1 -DSQLITE_ENABLE_COLUMN_METADATA=1 -DSQLITE_ENABLE_STAT4=1 -DSQLITE_ENABLE_FTS3=1 -DSQLITE_ENABLE_LOAD_EXTENSION=1 -DSQLITE_ENABLE_RTREE=1 -DSQLITE_SOUNDEX=1 -DSQLITE_ENABLE_MEMORY_MANAGEMENT=1 -DSQLITE_ENABLE_API_ARMOR=1 -DSQLITE_ENABLE_DBSTAT_VTAB=1 -DSQLITE_ENABLE_STMTVTAB=1 -DSQLITE_ENABLE_UPDATE_DELETE_LIMIT=1 -DINTEROP_TEST_EXTENSION=1 -DINTEROP_EXTENSION_FUNCTIONS=1 -DINTEROP_VIRTUAL_TABLE=1 -DINTEROP_FTS5_EXTENSION=1 -DINTEROP_PERCENTILE_EXTENSION=1 -DINTEROP_TOTYPE_EXTENSION=1 -DINTEROP_REGEXP_EXTENSION=1 -DINTEROP_JSON1_EXTENSION=1 -DINTEROP_SHA1_EXTENSION=1 -DINTEROP_SHA3_EXTENSION=1 -DINTEROP_SESSION_EXTENSION=1 $extradefs -lm -lpthread
+mkdir -p ../../../bin/$osname-$archname
+cp $libname ../../../bin/$osname-$archname/SQLite.Interop.dll
+mv $libname ../../../bin/$osname-$archname/
+popd

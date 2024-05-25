@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>System.Data.SQLite.Core.Duplicati.windows.arm64</id>
+    <version>1.0.116.1</version>
+    <authors>kenkendk</authors>
+    <owners>kenkendk</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This package contains the binaries required for using System.Data.SQLite.Core on Windows Arm64 platforms.</description>
+    <tags>Duplicati</tags>
+    <releaseNotes>Initial release</releaseNotes>
+
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/duplicati/system.data.sqlite-binaries</projectUrl>
+    <readme>docs\README.md</readme>
+    <repository type="git" url="https://github.com/duplicati/system.data.sqlite-binaries" />
+  </metadata>
+  <files>
+  	<file src="../bin/win-arm64/SQLite.Interop.dll" target="runtimes/win-arm64/native" />
+    <file src="./README.windows.arm64.md" target="docs/README.md" />
+  </files>        
+</package>
